@@ -24,7 +24,7 @@ export default function RootLayout({
       <body >
         <div className="nav_bar bg-white shadow-lg flex  p-6 gap-4 mb-5">
           <Link href="/" className="text-2xl mr-auto"><span className="font-extrabold text-3xl text-pink-400">PRO</span>folio</Link>
-          < SelectCategory className="hover: text-pink-400 cursor-pointer"/>
+          < SelectCategory />
           <AddProject />
         </div>
         {children}

@@ -1,4 +1,3 @@
-// Improved design version respecting your style and colors
 "use client";
 import Link from "next/link";
 import ProjectImg from "./ProjectImg";

@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "app/components/AddProject.jsx", "app/components/HomepageClient.jsx", "app/components/ProjectImg.jsx", "app/components/SelectCategory.jsx", "app/layout.tsx", "app/project/[id]/page.jsx"  ],
   "exclude": ["node_modules"]
 }

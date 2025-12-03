@@ -1,11 +1,11 @@
 import { db } from "@/lib/db/drizzle";
 import { sql } from "drizzle-orm";
-
 import HomepageClient from "./components/HomepageClient";
+import { Suspense } from "react"; 
 
 export default async function Home() {
   const data = await db.execute(sql`
-        SELECT 
+    SELECT 
       cat.name as category,
       cat.id as catId,
       JSON_AGG(
@@ -22,12 +22,11 @@ export default async function Home() {
     LEFT JOIN categories cat ON cat.id = p.category_id
     GROUP BY cat.name, cat.id
     ORDER BY cat.name
-    `);
+  `);
 
-  console.log("tous les projest",data.rows);
   return (
-    <div ><HomepageClient projectsData={data.rows} /></div>
-  )
+    <Suspense fallback={<div>Chargement…</div>}>
+      <HomepageClient projectsData={data.rows} />
+    </Suspense>
+  );
 }
-
-

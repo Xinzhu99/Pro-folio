@@ -19,7 +19,7 @@ export default function SelectCategory () {
     }
 
     return (
-       <form onClick={handleClick}>
+       <form onClick={handleClick} className="hover: cursor-pointer">
               <select name="category" id="category" defaultValue="tout" required className="border-1 py-2 px-5 rounded-4xl hover:bg-pink-300 cursor-pointer ">
                 <option value="tout" >Tous les projects</option>
                 {categories.map((item) => {
