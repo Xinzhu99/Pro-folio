@@ -3,23 +3,33 @@ import { useEffect, useState, useActionState, useRef } from "react";
 import { getClass } from "../actions/classes";
 import { getCategories } from "../actions/categories";
 import submitProject from "../actions/projects";
+import { stringify } from "querystring";
 
+interface Class {
+   id: number;
+  name: string;
+    date: Date;
+}
+interface Category {
+  id: number;
+    name: string;
+}
 export default function AddProject() {
   const [showModal, setShowModal] = useState(false)
 
   //utiliser useState et useEffect pour appeler les actions getCat et getClasses
-  const [classes, setClasses] = useState([]);
-  const [categories, setCategories] = useState([]);
+  const [classes, setClasses] = useState<Class[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
   useEffect(() => {
     getClass().then(setClasses);
     getCategories().then(setCategories);
   }, []);
 
   //utiliser useActionState pour gérer le statut du form 
-  const [message, formAction] = useActionState(submitProject, null);
+  const [message, formAction] = useActionState<string, FormData>(submitProject, null);
 
 
-  const formRef = useRef(null);
+  const formRef = useRef<any>(null);
  //utiliser le useEffect pour gérer l'affichage message après la sumission du form 
   useEffect(() => {
     if (message) {

@@ -1,6 +1,11 @@
 "use client";
 import { useState } from "react";
-export default function ProjectImg({imgSrc, defaultSrc}) {
+
+interface ProjectImgProps {
+  imgSrc: string;
+  defaultSrc: string;
+}
+export default function ProjectImg({imgSrc, defaultSrc}: ProjectImgProps) {
 
   const [imgError, setImgError] = useState(false);
 
@@ -14,7 +19,6 @@ export default function ProjectImg({imgSrc, defaultSrc}) {
   <img src={imgSrc}
   alt="thumbnail"
   onError={()=>setImgError(true)}
-  
   />
 )}
 </>
