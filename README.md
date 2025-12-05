@@ -16,9 +16,9 @@ Les utilisateur·rice·s pourront **proposer un projet** via la page d’accueil
 ### 1. 🗂️ Conception de la base de données
 ### 2. 🌱 Création d’une seed de données
 ### 3. 💻 Intégration sur le site
-a. Formulaire de proposition de projet
-b. Page d’accueil `/` : affichage des projets publiés
-c. Page de détail d’un projet
+- Formulaire de proposition de projet : API POST, gestion de modal(pop-up)
+- Page d’accueil `/` : affichage des projets publiés, filtreage des projets via menu déroulant (API GET)
+- Page de détail d’un projet : routing dynamique 
 
 ## Avancement du projet 
 24/11
