@@ -25,7 +25,7 @@ export default function AddProject() {
     if (message) {
       formRef.current?.reset();
     }
-    if (message === "Projet ajouté !") {
+    if (message) {
       setTimeout(() => setShowModal(false), 1000);
     }
   }, [message]);
